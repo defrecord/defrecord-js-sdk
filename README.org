@@ -1,0 +1,15 @@
+* 5Pylon Logger
+
+** Goals
+
+Simple logging service for predictive analytics and error detection.
+
+** Installation
+
+This can be consumed as a stand-along service.
+
+#+BEGIN_SRC html
+  <script src="http://wal.sh/5p/core.js"></script>
+  <div id=""></div>
+
+#+END_SRC
