@@ -1,0 +1,23 @@
+github_key: ""
+github_secret: ""
+mit_id: ""
+mit_secret: ""
+google_client_id: ""
+google_client_secret: ""
+google_analytics_key: ""
+
+test:
+  github_key: ""
+  github_secret: ""
+  mit_id: ""
+  mit_secret: ""
+  google_client_id: ""
+  google_client_secret: ""
+
+production:
+  github_key: ""
+  github_secret: ""
+  mit_id: ""
+  mit_secret: ""
+  google_client_id: ""
+  google_client_secret: ""
