@@ -1,0 +1,7 @@
+2015/05/06 18:03:00 [emerg] 61763#0: bind() to 0.0.0.0:8080 failed (48: Address already in use)
+2015/05/06 18:03:00 [emerg] 61763#0: bind() to 0.0.0.0:8080 failed (48: Address already in use)
+2015/05/06 18:03:00 [emerg] 61763#0: bind() to 0.0.0.0:8080 failed (48: Address already in use)
+2015/05/06 18:03:00 [emerg] 61763#0: bind() to 0.0.0.0:8080 failed (48: Address already in use)
+2015/05/06 18:03:00 [emerg] 61763#0: bind() to 0.0.0.0:8080 failed (48: Address already in use)
+2015/05/06 18:03:00 [emerg] 61763#0: still could not bind()
+2015/05/06 18:03:10 [error] 61757#0: *1 open() "/usr/local/Cellar/nginx/1.6.2/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
