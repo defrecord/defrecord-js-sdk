@@ -7,6 +7,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-3211"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
+                 [clj-time "0.9.0"]
                  [clj-yaml "0.4.0"]
                  [defun "0.2.0-RC"]
                  [figwheel "0.3.1"]
