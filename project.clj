@@ -16,11 +16,17 @@
                  ]
   :plugins [[lein-cljsbuild "1.1.3"]
             [lein-figwheel "0.5.1"]
+            [lein-essthree "0.2.1"]
             ]
   :source-paths ["src"]
   :clean-targets ^{:protect false} ["resources/public/js/compiled"]
+  :essthree {:deploy {:type       :directory
+                      :bucket     "defrecord.assets"
+                      :local-root "resources/public/js/compiled/"
+                      :aws-creds {:access-key-id "access-key-id"
+                                  :secret-access-key "secret-access-key"}}}
   :cljsbuild {
-    :builds [{:id "dev"
+              :builds [{:id "dev"
               :source-paths ["src"]
               :compiler {:output-to "resources/public/js/compiled/defrecord.logger.js"
                          :output-dir "resources/public/js/compiled/out"

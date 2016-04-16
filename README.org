@@ -1,4 +1,4 @@
-* 5Pylon Logger
+* defrecord Logger
 
 ** Goals
 
@@ -9,7 +9,23 @@ Simple logging service for predictive analytics and error detection.
 This can be consumed as a stand-along service.
 
 #+BEGIN_SRC html
-  <script src="http://wal.sh/5p/core.js"></script>
+  <script src="defrecord.logger.js"></script>
   <div id=""></div>
 
 #+END_SRC
+
+** Development
+
+    lein figwheel
+
+** Testing
+
+    lein test
+
+** Building
+
+    lein cljsbuild once
+
+** Deploying
+
+    lein essthree
