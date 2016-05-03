@@ -16,9 +16,10 @@
                  ]
   :plugins [[lein-cljsbuild "1.1.3"]
             [lein-figwheel "0.5.1"]
-            [lein-essthree "0.2.1"]
+            [s3-wagon-private "1.2.0"]
             ]
   :source-paths ["src"]
+  :repositories [["releases" {:url "s3p://defrecord/releases/" :creds :gpg}]]
   :clean-targets ^{:protect false} ["resources/public/js/compiled"]
   :essthree {:deploy {:type       :directory
                       :bucket     "defrecord.assets"
