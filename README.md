@@ -8,8 +8,8 @@ Simple logging service for predictive analytics and error detection.
 
 This can be consumed as a stand-along service.
 
-    <script data-site#"123456"
-          src#"//defrecord.s3-website-us-west-2.amazonaws.com/defrecord.logger.js"></script>
+    <script data-site="123456"
+            src="//defrecord.s3-website-us-west-2.amazonaws.com/defrecord.logger.js"></script>
 
 ## Development
 
