@@ -1,5 +1,6 @@
 (ns ^:figwheel-always logger.core
-    (:require [dommy.core]))
+  (:require
+   [dommy.core :as dommy :refer-macros [sel1]]))
 
 (enable-console-print!)
 
