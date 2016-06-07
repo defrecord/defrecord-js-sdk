@@ -14,8 +14,10 @@
   (js/console.log "Logged")
   (dommy/append!
    (sel1 :body)
-   (-> (dommy/create-element :img)
-       (dommy/set-attr! "src" "http://p.wal.sh/defrecord/1x1-event.gif"))))
+   (dommy/set-attr!
+    (dommy/create-element :img)
+    "src"
+    "http://p.wal.sh/defrecord/1x1-event.gif")))
 
 (defn logger []
   (js/console.log "logger")
@@ -30,8 +32,10 @@
   (js/console.log "main")
   (dommy/append!
    (sel1 :body)
-   (-> (dommy/create-element :img)
-       (dommy/set-attr! "src" "http://p.wal.sh/defrecord/1x1-load.gif")))
+   (dommy/set-attr!
+    (dommy/create-element :img)
+    "src"
+    "http://p.wal.sh/defrecord/1x1-load.gif"))
   (logger))
 
 (defn sidebar [_]
