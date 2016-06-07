@@ -16,6 +16,7 @@
                  [figwheel "0.5.2"]
                  [incanter "1.9.0"]
                  [lumberjack "0.1.0"]
+                 [org.omcljs/om "0.9.0"]
                  [prismatic/dommy "1.1.0"]
                  [sablono "0.7.1"]
                  ]
