@@ -33,9 +33,11 @@
                                   :secret-access-key "secret-access-key"}}}
   :cljsbuild {
               :builds [{:id "dev"
-              :source-paths ["src"]
-              :compiler {:output-to "resources/public/js/compiled/defrecord.logger.js"
-                         :output-dir "resources/public/js/compiled/out"
+                        :figwheel true
+                        :source-paths ["src"]
+
+                        :compiler {:output-to "resources/public/js/compiled/defrecord.logger.js"
+                                   :output-dir "resources/public/js/compiled/out"
                          :optimizations :none
                          :main logger.core
                          :asset-path "js/compiled/out"
@@ -48,8 +50,4 @@
                          :main logger.core
                          :optimizations :advanced
                          :pretty-print false}}]}
-  :figwheel {
-             :http-server-root "public" ;; default and assumes "resources"
-             :server-port 3449 ;; default
-             :css-dirs ["resources/public/css"] ;; watch and update CSS
-             })
+  :figwheel {})

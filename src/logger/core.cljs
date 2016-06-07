@@ -1,22 +1,30 @@
 (ns ^:figwheel-always logger.core
   (:require
-   [dommy.core :as dommy :refer-macros [sel1]]))
+   [dommy.core :as dommy :refer-macros [sel sel1]]))
 
 (enable-console-print!)
 
-;; (println "logger.core")
+(println "logger.core")
 
-;; Set up the initial logger
-(defonce app-state (atom {:url "http://wal.sh/logger"}))
+(defonce app-state (atom {:url "http://p.wal.sh/defrecord"}))
 
-(def config {})
+(defn logger []
+  (js/console.log "logger")
+  (dommy/append!
+   (sel1 :body)
+   (-> (dommy/create-element :div)
+       (dommy/set-text! "Log")))
+  (dommy/append!
+   (sel1 :body)
+   (-> (dommy/create-element :img)
+       (dommy/set-attr! "src" "http://p.wal.sh/defrecord/1x1-event.gif"))))
 
-(defn send []
-  (js/console.log "Logging")
-  (-> (dommy/append-child (sel1 :body)
-                          (-> (dommy/create-element :div)
-                              (dommy/set-text! "Click me!"))))
-  (-> (sel1 :script)
-      (dommy/insert-after!
-       (-> (dommy/create-element "img")
-           (dommy/set-attr! "http://wal.sh/logger")))))
+(defn main []
+  (js/console.log "main")
+  (dommy/append!
+   (sel1 :body)
+   (-> (dommy/create-element :img)
+       (dommy/set-attr! "src" "http://p.wal.sh/defrecord/1x1-load.gif")))
+  (logger))
+
+(main)
