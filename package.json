@@ -1,0 +1,30 @@
+{
+  "name": "@jwalsh/defrecord-js-sdk",
+  "version": "0.2.0",
+  "description": "Data logging and analysis ",
+  "main": "dist/defrecord.logger.js",
+  "directories": {
+    "test": "spec"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec",
+    "build": "./bin/build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defrecord/defrecord-js-sdk.git"
+  },
+  "author": "Jason Walsh <j@wal.sh>",
+  "bugs": {
+    "url": "https://github.com/defrecord/defrecord-js-sdk/issues"
+  },
+  "homepage": "https://github.com/defrecord/defrecord-js-sdk#readme",
+  "license": "BSD",
+  "typescript": {
+    "definition": "dist/defrecord.logger.d.ts"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5",
+    "testdom": "^2.0.0"
+  }
+}

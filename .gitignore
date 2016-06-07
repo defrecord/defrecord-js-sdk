@@ -12,3 +12,6 @@ pom.xml
 .repl
 .nrepl-port
 dev_src/
+dist/
+.lein-failures
+node_modules/

@@ -4,7 +4,7 @@
 
 (enable-console-print!)
 
-(println "logger.core")
+;; (println "logger.core")
 
 ;; Set up the initial logger
 (defonce app-state (atom {:url "http://wal.sh/logger"}))
