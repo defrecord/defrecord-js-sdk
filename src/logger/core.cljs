@@ -30,7 +30,7 @@
      "http://p.wal.sh/defrecord/1x1-event.gif?"
      msg))))
 
-(defn logger [msg]
+(defn logger []
   (js/console.log "logger")
   (dommy/append!
    (sel1 :body)
@@ -39,12 +39,11 @@
        (dommy/set-text! "Log")))
   (dommy/listen! (sel1 ".logger") :click click-handler))
 
-(defn poll-logger []
-  (def poller
-    (.setTimeout js/window #(event-logger (str (.now js/Date) "-polled")) 1000)))
+(def poller
+  (.setInterval js/window #(event-logger (str (.now js/Date) "-polled")) 2000))
 
 (defn scroll-logger []
-  (dommy/listen! (sel1 :body) :scroll event-handler))
+  (dommy/listen! (sel1 :body) :scroll #(event-logger "scroll")))
 
 (defn main []
   (js/console.log "main")
@@ -55,7 +54,7 @@
     "src"
     "http://p.wal.sh/defrecord/1x1-load.gif"))
   (logger)
-  (poll-logger))
+  (scroll-logger))
 
 (defn sidebar [_]
   (reify
