@@ -19,7 +19,18 @@
     "src"
     "http://p.wal.sh/defrecord/1x1-event.gif")))
 
-(defn logger []
+(defn event-logger [msg]
+  (js/console.log (str "Logged event: " msg))
+  (dommy/append!
+   (sel1 :body)
+   (dommy/set-attr!
+    (dommy/create-element :img)
+    "src"
+    (str
+     "http://p.wal.sh/defrecord/1x1-event.gif?"
+     msg))))
+
+(defn logger [msg]
   (js/console.log "logger")
   (dommy/append!
    (sel1 :body)
@@ -27,6 +38,13 @@
        (dommy/add-class! :logger)
        (dommy/set-text! "Log")))
   (dommy/listen! (sel1 ".logger") :click click-handler))
+
+(defn poll-logger []
+  (def poller
+    (.setTimeout js/window #(event-logger (str (.now js/Date) "-polled")) 1000)))
+
+(defn scroll-logger []
+  (dommy/listen! (sel1 :body) :scroll event-handler))
 
 (defn main []
   (js/console.log "main")
@@ -36,7 +54,8 @@
     (dommy/create-element :img)
     "src"
     "http://p.wal.sh/defrecord/1x1-load.gif"))
-  (logger))
+  (logger)
+  (poll-logger))
 
 (defn sidebar [_]
   (reify
@@ -61,8 +80,5 @@
     om/IRender
     (render [this]
       (dom/p nil (:text data)))))
-
-;; (om/root log-item {:text "Initialized"}
-;;    {:target (. js/document (getElementById "app"))})
 
 (main)
